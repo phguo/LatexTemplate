@@ -1,0 +1,440 @@
+\documentclass[3p,review,a4paper]{elsarticle}
+\journal{Elsevier}
+
+% <<<<< Added by guoph start <<<<< %
+
+% set margin
+\geometry{
+        textheight=24cm, 
+        % textwidth=17cm
+        % a4paper,
+}
+
+% Chinese
+% \usepackage{fontspec}
+% \usepackage[slantfont, boldfont]{xeCJK}
+% \setCJKmainfont{SimSong-Regular}
+% \XeTeXlinebreaklocale "zh"
+% \XeTeXlinebreakskip = 0pt plus 1pt
+
+% Palatino font
+% \usepackage{mathpazo}
+% \usepackage{microtype}
+% Tweak caption labels
+% \usepackage[margin=15pt,font=small,labelfont={bf,sf}]{caption}
+% section bold font
+% \usepackage{sectsty}
+
+% line number
+% \usepackage{lineno}
+% \modulolinenumbers[1]
+% \linenumbers
+
+\usepackage{amsmath,graphicx,bm,amsfonts,mathrsfs}
+\usepackage[short]{optidef}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+% % \newtheorem{proof}{Proof}[section]
+% \newenvironment{proof}{{\indent \indent \it Proof:\quad}}{\hfill $\blacksquare$\par}
+\newcommand*{\logeq}{\ratio\Leftrightarrow}
+
+% \sout{}
+% \usepackage{ulem}
+
+% appendix
+% \usepackage[title]{appendix}
+% \def\appendixname{Appendix}
+
+% Table
+\usepackage{booktabs} 
+\usepackage[flushleft]{threeparttable} 
+\usepackage{tabularx, xltabular, multirow}
+% display break for "align" environment
+\allowdisplaybreaks[1]
+
+% Algorithm
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{setspace}
+% \AtBeginEnvironment{algorithm}{\setstretch{200}}
+% algorithm highlight
+% \newcommand\mycommfont[1]{\ttfamily\textcolor{NavyBlue}{#1}}
+\SetCommentSty{mycommfont}
+
+% For \upcite{}
+% \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+
+% Handle "Package hyperref Warning: Token not allowed in a PDF string."
+% \hypersetup{pdfauthor={guoph}}
+
+% Row spacing
+% \renewcommand{\baselinestretch}{1.4}
+
+% Handle "elsarticle Package inputenc Error: Invalid UTF-8 byte sequence."
+% When submit, comment this line and copy the content of .bbl file the the end but before \end{document} of this file.
+\UseRawInputEncoding
+
+% TODO
+\newcommand\todo[1]{{\textcolor{NavyBlue}{\sc TODO: (#1)}}}
+% \renewcommand\todo[1]{}
+% comment
+\newcommand\cmt[1]{{\textcolor{NavyBlue}{[#1]}}} 
+% \renewcommand\cmt[1]{}
+% highlight
+\newcommand\highlight[1]{{\color{NavyBlue}{#1}}}
+% \newcommand\highlight[1]{{\textcolor{black}{#1}}}
+
+% comment
+\usepackage{comment}
+
+\usepackage{subfigure} 
+
+\usepackage{makecell}
+
+% for MidnightBlue and NavyBlue color
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=True,allcolors=NavyBlue]{hyperref} 
+\usepackage[nameinlink]{cleveref}
+\crefformat{equation}{(#2#1#3)} 
+
+% >>>>> Added by guoph end >>>>> %
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and,
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Numbered
+% \bibliographystyle{bib_style/model1-num-names}
+%% Numbered without titles
+% \bibliographystyle{bib_style/model1a-num-names}
+%% Harvard
+% \bibliographystyle{bib_style/model2-names.bst}\biboptions{authoryear}
+%% Vancouver numbered,
+%\usepackage{bib_style/numcompress}\bibliographystyle{bib_style/model3-num-names}
+%% Vancouver name/year
+% \usepackage{bib_style/numcompress}\bibliographystyle{bib_style/model4-names}\biboptions{authoryear}
+%% APA style
+\bibliographystyle{bib_style/model5-names.bst}\biboptions{authoryear}
+%% AMA style
+% \usepackage{bib_style/numcompress}\bibliographystyle{bib_style/model6-num-names}
+%% `Elsevier LaTeX' style
+% \bibliographystyle{bib_style/elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\hypersetup{allcolors=NavyBlue}  
+% \fontsize{10}{12}\selectfont % default
+% \fontsize{10}{11}\selectfont
+
+\begin{frontmatter}
+
+\title{This is a \LaTeX template for Elsevier}
+
+% (or branch and check)
+%% Group authors per affiliation:
+% \author{Elsevier\fnref{myfootnote}}
+% \address{Radarweg 29, Amsterdam}
+% \fntext[myfootnote]{Since 1880.}
+
+%% or include affiliations in footnotes:
+\author[nuaa]{Penghui Guo
+\corref{correspondingauthor}
+}
+\cortext[correspondingauthor]{Corresponding author}
+\ead{m@guo.ph}
+
+\address[nuaa]{College of Economics and Management, Nanjing University of Aeronautics and Astronautics, Nanjing 211106, China}
+
+
+\begin{abstract}
+        Abstract
+\end{abstract}
+
+\begin{keyword}
+        input keyword here
+        \sep input another keyword here
+\end{keyword}
+
+\end{frontmatter}
+
+% \linenumbers
+
+\newpage
+
+\section{Introduction} \label{SEC: Introduction}
+
+\todo{Something to do}
+
+\highlight{Something be highlighted}
+
+\cmt{Some comment}
+
+invisible comment:
+\begin{comment}
+        invisible comment
+\end{comment}
+
+\section{Literature review} \label{SEC: Related works}
+ 
+\subsection{Literature review subsection} \label{SUBSEC: Literature review subsection}
+
+citation: \cite{grassTwostageStochasticProgramming2016},
+
+citation in bracket: \citep{grassTwostageStochasticProgramming2016}, 
+
+\section{Mathematical model} \label{SEC: Mathmatical models}
+
+\begin{center}
+        \footnotesize
+        \def\arraystretch{.8}
+\begin{xltabular}{.9\textwidth}{lX}
+\caption{Notations} \label{TAB: notations} \\
+        \toprule 
+        % ====================
+        % ======= Sets =======
+        % ====================
+        \multicolumn{2}{l}{\bf Sets:} \\
+        % \midrule
+        \(T\) & blablabla \\
+        \midrule
+        % ====================
+        % ==== Parameters ====
+        % ====================
+        \multicolumn{2}{l}{\bf Parameters:} \\
+        % \midrule
+        \(M\) & blablabla \\
+        \midrule
+        % ====================
+        % === Decision Var ===
+        % ====================
+        \multicolumn{2}{l}{\bf First-stage decision variables:} \\
+        % \midrule
+         \(y_{ik}\) & blablabla \\
+        \midrule 
+        \multicolumn{2}{l}{\bf Second-stage decision variables:} \\
+        % \midrule
+         \(t_{ij}^s\) & blablabla \\
+        \midrule
+        \multicolumn{2}{l}{\bf Auxiliary decision variables:} \\
+        % \midrule
+         \(x_{pq}^s\) & blablabla \\
+        \bottomrule
+\end{xltabular}
+\end{center}
+
+blablabla
+
+Model \cref{MODEL SPRP}
+
+\begin{subequations} \label{MODEL SPRP}
+        \renewcommand{\theequation}{\theparentequation.\arabic{equation}}
+\begin{align} 
+\label{cost objective}
+\begin{split}
+        \text{[SPRP] ~minimize~}
+        & \sum_{i \in T} \sum_{k \in K} c^k y_{ik}
+        + \sum_{i \in T} q l_i
+        + \sum_{i \in T} \sum_{h \in {H}} c_1^h w_i^h \\
+        & + \mathbb{E}_{s \in S} \left(\sum_{i \in T}\mathcal{R}_{is}\right)
+\end{split} \\
+% # # # # # # # # first-stage constraints # # # # # # # # 
+\label{constraint}
+\text{subject to~}
+        & \sum_{k \in K} y_{ik} \leq 1, 
+        & \forall i \in T
+\end{align}
+\end{subequations}
+% # # # # # # # # explain objetive function and original constraint # # # # # # # # 
+\eqref{cost objective} blablabla.
+
+
+\section{Solution method} \label{SEC: Solution method}
+
+\subsection{Solution method subsection} \label{SUBSEC: Solution method subsection}
+
+\subsubsection{Solution method subsubsection} \label{SUBSUBSEC: Solution method subsubsection}
+
+\section{Numerical experiments}\label{SEC: Numerical experiments}
+
+% \begin{table}[!htp]
+\begin{table}[!t]
+        \footnotesize
+        \centering
+        \def\arraystretch{1.1}
+\caption{Table}
+% \resizebox{.9\textwidth}{!}{
+\begin{threeparttable}
+\begin{tabular}{cll}
+        \toprule 
+        Parameters & Description & Value \\
+        \midrule
+        \multicolumn{2}{l}{\bf Variable parameters:} \\
+        \(|T|\) & blablabla & blablabla \\
+        \midrule
+        \multicolumn{2}{l}{\bf Deterministic parameters:} \\
+        \(p_{j}\) & blablabla & blablabla \\
+        \bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item [1] balblabla
+\end{tablenotes}
+\end{threeparttable}
+% }
+\label{TAB: instance}
+\end{table} 
+
+
+\begin{table}[!htp]
+        \def\arraystretch{1.1}
+        \footnotesize
+        \centering
+\caption{Table}
+\resizebox{1\textwidth}{!}{
+\begin{threeparttable}
+\begin{tabular}{crrrrrrrrrrrr}
+\toprule
+        \multirow{2}{*}{Instance} & \multicolumn{3}{l}{A} & \multicolumn{3}{l}{B} & \multicolumn{3}{l}{C} & \multicolumn{3}{l}{D}\\
+        \cmidrule(rrrr){2-4} \cmidrule(rrrr){5-7} \cmidrule(rrrr){8-10} \cmidrule(rrrr){11-13} 
+                & Obj. & \makecell[c]{Gap\\(\%)} & \makecell[c]{Time\\(s)} & Obj. & \makecell[c]{Gap\\(\%)} & \makecell[c]{Time\\(s)} & Obj. & \makecell[c]{Gap'\\(\%)} & \makecell[c]{Time\\(s)} & Obj. & \makecell[c]{Gap\\(\%)} & \makecell[c]{Time\\(s)}\\
+\midrule
+**-**-** & {\bf *000} & 0.00 & 000 & {\bf *000} & 0.00 & 000 & {\bf *000} & 0.00 & 000 & {\bf *000} & 0.00 & 000 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+        \item blablabla
+        \end{tablenotes}
+\end{threeparttable}
+}
+\label{TAB: results}
+\end{table}
+
+
+\begin{figure}[!htp]
+        \centering
+        \subfigure[Sub figure]{
+                \includegraphics[width=.30\textwidth]{figure/blanck.png}
+                \label{FIG: a}
+                }
+        \subfigure[Sub figure]{
+                \includegraphics[width=.30\textwidth]{figure/blanck.png}
+                \label{FIG: b}
+                }
+                \begin{minipage}[b]{.235\textwidth}
+                        \centering
+                        \subfigure[Sub figure]{
+                                \includegraphics[width=\textwidth]{figure/blanck.png}
+                                \label{FIG: c}
+                                }
+                        \subfigure[Sub figure]{
+                                \includegraphics[width=\textwidth]{figure/blanck.png}
+                                \label{FIG: d}
+                                }
+                \end{minipage}
+        \caption{A figure 
+        }
+        \label{FIG: all}
+\end{figure}
+
+reference \Cref{FIG: all}, \Cref{FIG: a}, \Cref{FIG: b}, \Cref{FIG: c}, \Cref{FIG: d}.
+
+another reference \cref{FIG: all}, \cref{FIG: a}, \cref{FIG: b}, \cref{FIG: c}, \cref{FIG: d}.
+
+\ref{POOF: name}, \cref{THEOREM: name}
+
+
+\section{Acknowledgment}
+
+This work was supported by 
+the United States National Science Foundation (NSF) [grant number ***]; 
+the National Natural Science Foundation of China (NSFC) [grant number ***]; 
+and the China Scholarship Council (CSC) [grant number ***].
+We also appreciate the anonymous reviewers for their valuable suggestions.
+
+\appendix
+
+\section{Some proof} \label{POOF: name}
+
+\begin{theorem} \label{THEOREM: name}
+        Some theorem.
+\end{theorem}
+
+\begin{proof}        
+        \begin{align}
+                \text{Equations}
+        \end{align}
+        \begin{align*}
+                \text{Equations without number}
+        \end{align*}
+        \begin{enumerate}[\it\text{Case} 1:]
+                \item Case
+                \item \label{case 2} 
+                \begin{enumerate}[\it\text{Sub case} (1):]
+                        \item Sub case
+                \end{enumerate}
+        \end{enumerate}
+        proof is end here
+\end{proof}
+
+\section{Pseudo code} \label{Pseudo code}
+ 
+% \IncMargin{.3em}
+\begin{algorithm}
+        \setstretch{1}
+        % \small
+        \footnotesize
+        % \SetStartEndCondition{ }{}{}
+        \SetKwProg{Fn}{def}{\string:}{}
+        \SetKwFunction{Benders}{Benders}
+        \SetKwFunction{NBenders}{function\_name}
+        % \SetKwFunction{Range}{range}
+        % \SetKw{KwTo}{in}
+        \SetKwFor{For}{for}{\string:}{}
+        \SetKwFor{ForAll}{for}{\string:}{}
+        \SetKwIF{If}{ElseIf}{Else}{if}{:}{elif}{else:}{}
+        \SetKwFor{While}{while}{:}{}
+        \AlgoDontDisplayBlockMarkers
+        % \SetAlgoNoEnd
+        % \SetAlgoNoLine
+        \SetSideCommentRight
+        \SetKwData{True}{True}
+        \SetKwData{False}{False}
+        \SetKwData{None}{None}
+
+\caption{This is an algorithm} \label{A: algorithm}
+\KwData{data}
+\KwResult{results}
+% \BlankLine
+\Fn{\NBenders{PMP\(_u\)}}{
+        gap \(\leftarrow +\infty\)\;
+        \While{gap \(\neq 0\)}{
+                do something\;
+        \If{condition \(>\) value}{
+                something = \True\;
+                \ForAll{\(i \in T, s \in S\)}{
+                        do something\; \label{A2: label for this line}
+                }
+                \If{ondition \(>\) value}{
+                        a \(\leftarrow\) b
+                        \tcp*[r]{blablabla}
+                }
+        }
+        \Else(\tcp*[f]{Return something}){
+                \KwRet{something}\; 
+        }
+        \(v \leftarrow v + 1\)\;
+        }
+        \KwRet{something}
+}
+\end{algorithm}
+
+% \DecMargin{.3em}
+
+\bibliography{mybibfile}
+ 
+\end{document}
