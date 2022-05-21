@@ -1,24 +1,22 @@
-\documentclass[3p,review,a4paper]{elsarticle}
-\journal{Elsevier}
+\documentclass[3p, review]{elsarticle}
+\journal{}
 
 % <<<<< Added by guoph start <<<<< %
-
 % set margin
 \geometry{
-        textheight=24cm, 
-        % textwidth=17cm
-        % a4paper,
+        textheight=25cm, 
+        textwidth=18cm
 }
 
 % Chinese
-% \usepackage{fontspec}
+% \usepackage{fontspec} 
 % \usepackage[slantfont, boldfont]{xeCJK}
 % \setCJKmainfont{SimSong-Regular}
 % \XeTeXlinebreaklocale "zh"
-% \XeTeXlinebreakskip = 0pt plus 1pt
+% \XeTeXlinebreakskip = 0pt plus 1pt 
 
 % Palatino font
-% \usepackage{mathpazo}
+% \usepackage{mathpazo} 
 % \usepackage{microtype}
 % Tweak caption labels
 % \usepackage[margin=15pt,font=small,labelfont={bf,sf}]{caption}
@@ -34,13 +32,17 @@
 \usepackage[short]{optidef}
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
+\newtheorem{property}{Property}
+\newtheorem{example}{Example}
 % % \newtheorem{proof}{Proof}[section]
 % \newenvironment{proof}{{\indent \indent \it Proof:\quad}}{\hfill $\blacksquare$\par}
 \newcommand*{\logeq}{\ratio\Leftrightarrow}
 
+\DeclareMathOperator*{\argminA}{argmin} % Jan Hlavacek
+
 % \sout{}
 % \usepackage{ulem}
-
+ 
 % appendix
 % \usepackage[title]{appendix}
 % \def\appendixname{Appendix}
@@ -55,7 +57,7 @@
 % Algorithm
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \usepackage{setspace}
-% \AtBeginEnvironment{algorithm}{\setstretch{200}}
+% \AtBeginEnvironment{algorithm}{\setstretch{1.2}}
 % algorithm highlight
 % \newcommand\mycommfont[1]{\ttfamily\textcolor{NavyBlue}{#1}}
 \SetCommentSty{mycommfont}
@@ -71,17 +73,17 @@
 
 % Handle "elsarticle Package inputenc Error: Invalid UTF-8 byte sequence."
 % When submit, comment this line and copy the content of .bbl file the the end but before \end{document} of this file.
-\UseRawInputEncoding
+% \UseRawInputEncoding
 
 % TODO
-\newcommand\todo[1]{{\textcolor{NavyBlue}{\sc TODO: (#1)}}}
-% \renewcommand\todo[1]{}
+\newcommand\todo[1]{{\textcolor{orange}{\sc TODO: (#1)}}}
+\renewcommand\todo[1]{}
 % comment
 \newcommand\cmt[1]{{\textcolor{NavyBlue}{[#1]}}} 
-% \renewcommand\cmt[1]{}
+\renewcommand\cmt[1]{}
 % highlight
-\newcommand\highlight[1]{{\color{NavyBlue}{#1}}}
-% \newcommand\highlight[1]{{\textcolor{black}{#1}}}
+\newcommand\highlight[1]{{\color{orange}{#1}}}
+\renewcommand\highlight[1]{{\color{black}{#1}}}
 
 % comment
 \usepackage{comment}
@@ -94,10 +96,29 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks=True,allcolors=NavyBlue]{hyperref} 
 \usepackage[nameinlink]{cleveref}
-\crefformat{equation}{(#2#1#3)} 
+\Crefformat{equation}{(#2#1#3)}
+
+% TikZ
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{fit}  % fitting shapes to coordinates
+\usetikzlibrary{backgrounds}  % drawing the background after the foreground
+
+\usepgfplotslibrary{fillbetween}
+\definecolor{RoyalAzure}{rgb}{0.0, 0.22, 0.66}  
+\pgfplotsset{compat=1.16}
+
+% \usepackage{makecell}
+\usepackage{diagbox}
+
+
+\usepackage{dcolumn}
+\usepackage{lscape}
+\usepackage{verbatim}
+
 
 % >>>>> Added by guoph end >>>>> %
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -106,20 +127,28 @@
 %% To change the style, put a % in front of the second line of the current style and,
 %% remove the % from the second line of the style you would like to use.
 %%%%%%%%%%%%%%%%%%%%%%%
+
 %% Numbered
 % \bibliographystyle{bib_style/model1-num-names}
+
 %% Numbered without titles
 % \bibliographystyle{bib_style/model1a-num-names}
+
 %% Harvard
 % \bibliographystyle{bib_style/model2-names.bst}\biboptions{authoryear}
+
 %% Vancouver numbered,
 %\usepackage{bib_style/numcompress}\bibliographystyle{bib_style/model3-num-names}
+
 %% Vancouver name/year
 % \usepackage{bib_style/numcompress}\bibliographystyle{bib_style/model4-names}\biboptions{authoryear}
+
 %% APA style
 \bibliographystyle{bib_style/model5-names.bst}\biboptions{authoryear}
+
 %% AMA style
 % \usepackage{bib_style/numcompress}\bibliographystyle{bib_style/model6-num-names}
+
 %% `Elsevier LaTeX' style
 % \bibliographystyle{bib_style/elsarticle-num}
 %%%%%%%%%%%%%%%%%%%%%%%
