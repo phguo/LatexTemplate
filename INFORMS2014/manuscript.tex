@@ -1,0 +1,387 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author template for Manufacturing & Service Operations Management (msom)
+%% Mirko Janc, Ph.D., INFORMS, mirko.janc@informs.org
+%% ver. 0.95, December 2010
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \documentclass[msom,blindrev]{informs3} % current default for manuscript submission
+\documentclass[nonblindrev]{informs3}
+
+% \OneAndAHalfSpacedXI
+% \OneAndAHalfSpacedXII % Current default line spacing
+% \DoubleSpacedXII
+% \DoubleSpacedXI
+
+% If hyperref is used, dvi-to-ps driver of choice must be declared as
+%   an additional option to the \documentclass. For example
+%\documentclass[dvips,msom]{informs3}      % if dvips is used
+%\documentclass[dvipsone,msom]{informs3}   % if dvipsone is used, etc.
+
+% Private macros here (check that there is no clash with the style)
+
+% Natbib setup for author-year style
+\usepackage{natbib}
+ \bibpunct[, ]{(}{)}{,}{a}{}{,}%
+ \def\bibfont{\footnotesize}%
+ \def\bibsep{\smallskipamount}%
+ \def\bibhang{20pt}%
+ \def\newblock{\ }%
+ \def\BIBand{and}%
+
+%% Setup of theorem styles. Outcomment only one. 
+%% Preferred default is the first option.
+\TheoremsNumberedThrough     % Preferred (Theorem 1, Lemma 1, Theorem 2)
+%\TheoremsNumberedByChapter  % (Theorem 1.1, Lema 1.1, Theorem 1.2)
+
+%% Setup of the equation numbering system. Outcomment only one.
+%% Preferred default is the first option.
+\EquationsNumberedThrough    % Default: (1), (2), ...
+%\EquationsNumberedBySection % (1.1), (1.2), ...
+
+% In the reviewing and copyediting stage enter the manuscript number.
+\MANUSCRIPTNO{not assigned} % When the article is logged in and DOI assigned to it,
+                 %   this manuscript number is no longer necessary
+
+
+
+
+
+
+
+
+% <<<<< Added by guoph start <<<<< %
+
+% Chinese
+% \usepackage{fontspec} 
+% \usepackage[slantfont, boldfont]{xeCJK}
+% \setCJKmainfont{SimSong-Regular}
+% \XeTeXlinebreaklocale "zh"
+% \XeTeXlinebreakskip = 0pt plus 1pt
+
+% \usepackage{lmodern}
+
+% Palatino font 
+% \usepackage{mathpazo}
+% \usepackage{microtype}
+% Tweak caption labels 
+% \usepackage[margin=15pt,font=small,labelfont={bf,sf}]{caption} 
+% section bold font
+% \usepackage{sectsty}
+
+% line number
+% \usepackage{lineno}
+% \modulolinenumbers[1]
+% \linenumbers
+
+\usepackage{amsmath,graphicx,bm,amsfonts,mathrsfs}
+\usepackage[short]{optidef} 
+% \usepackage{amsthm}
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{property}{Property}
+% \newtheorem{example}{Example}
+% % \newtheorem{proof}{Proof}[section]
+% \newenvironment{proof}{{\indent \indent \it Proof:\quad}}{\hfill $\blacksquare$\par}
+\newcommand*{\logeq}{\ratio\Leftrightarrow}
+
+\DeclareMathOperator*{\argminA}{argmin} % Jan Hlavacek
+
+% \sout{}
+% \usepackage{ulem} 
+
+% \ul{}
+\usepackage{soul}
+ 
+% appendix
+% \usepackage[title]{appendix} 
+% \def\appendixname{Appendix}
+ 
+% Table
+\usepackage{booktabs} 
+\usepackage[flushleft]{threeparttable} 
+\usepackage{tabularx, xltabular, multirow}
+% display break for "align" environment
+\allowdisplaybreaks[1] 
+
+% Algorithm
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e} 
+\usepackage{setspace}
+% \AtBeginEnvironment{algorithm}{\setstretch{1.2}}
+% algorithm highlight
+% \newcommand\mycommfont[1]{\ttfamily\textcolor{NavyBlue}{#1}}
+\SetCommentSty{mycommfont}
+
+% For \upcite{}
+% \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+
+% Handle "Package hyperref Warning: Token not allowed in a PDF string."
+% \hypersetup{pdfauthor={guoph}}
+
+% Row spacing
+% \renewcommand{\baselinestretch}{1.4}
+
+% Handle "elsarticle Package inputenc Error: Invalid UTF-8 byte sequence."
+% When submit, comment this line and copy the content of .bbl file the the end but before \end{document} of this file.
+% \UseRawInputEncoding
+
+% TODO
+\newcommand\todo[1]{{\textcolor{violet}{\bf [\ul{TODO}: #1]}}}
+% \renewcommand\todo[1]{}
+% comment
+\newcommand\cmt[1]{{\textcolor{NavyBlue}{[#1]}}} 
+% \renewcommand\cmt[1]{}
+% highlight
+\definecolor{internationalorange}{rgb}{1.0, 0.31, 0.0}
+\newcommand\hlt[1]{{\textcolor{internationalorange}{#1}}}
+% \renewcommand\hlt[1]{{\color{black}{#1}}}
+
+% comment
+\usepackage{comment}
+
+\usepackage{subfigure} 
+
+\usepackage{makecell}
+
+% for MidnightBlue and NavyBlue color
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=True,allcolors=NavyBlue]{hyperref} 
+\usepackage[nameinlink]{cleveref}
+\Crefformat{equation}{(#2#1#3)}
+
+% TikZ
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{fit}  % fitting shapes to coordinates
+\usetikzlibrary{backgrounds}  % drawing the background after the foreground
+
+\usepgfplotslibrary{fillbetween}
+\definecolor{RoyalAzure}{rgb}{0.0, 0.22, 0.66}  
+\pgfplotsset{compat=1.16}
+
+% \usepackage{makecell}
+\usepackage{diagbox}
+
+
+\usepackage{dcolumn}
+\usepackage{lscape}
+\usepackage{verbatim}
+ 
+\usepackage{marginnote}
+
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhead{}
+% \fancyhead[L]{{\bf Guo \& Zhu:} {\it Stochastic Decentralized Dual Dynamic Programming - S3DP}}
+% \fancyhead[R]{\thepage}
+% \fancyfoot{}
+
+\usepackage{cancel} 
+
+\usepackage{endnotes}
+\let\footnote=\endnote
+
+% move blank on each page to the bottom
+\raggedbottom
+
+
+% set page size
+\usepackage{geometry}
+\geometry{
+        a4paper,
+        textheight=250mm, 
+        textwidth=162mm
+}
+
+% ###### INFORMS Template customization start ###### %
+
+% remove INFORMS disclaimer at the top of title page
+\renewcommand{\theARTICLETOP}{}
+
+% remove Article submitted to {\it\theJOURNAL}; manuscript no. {\theMANUSCRIPTNO}}
+% \RRHSecondLine{}
+% \LRHSecondLine{}
+\RRHSecondLine{Submmited to: ***; Manuscript ID: ***}
+\LRHSecondLine{Submmited to: ***; Manuscript ID: ***}
+
+
+% bibliographystyle
+% !!! issn is removed for article in informs2014.bst
+\bibliographystyle{informs2014}
+
+% ###### INFORMS Template customization end   ###### %
+
+
+% >>>>> Added by guoph end >>>>> %
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%
+
+% Outcomment only when entries are known. Otherwise leave as is and 
+%   default values will be used.
+%\setcounter{page}{1}
+%\VOLUME{00}%
+%\NO{0}%
+%\MONTH{Xxxxx}% (month or a similar seasonal id)
+%\YEAR{0000}% e.g., 2005
+%\FIRSTPAGE{000}%
+%\LASTPAGE{000}%
+%\SHORTYEAR{00}% shortened year (two-digit)
+%\ISSUE{0000} %
+%\LONGFIRSTPAGE{0001} %
+%\DOI{10.1287/xxxx.0000.0000}%
+
+% Author's names for the running heads
+% Sample depending on the number of authors;
+% \RUNAUTHOR{Jones}
+% \RUNAUTHOR{Jones and Wilson}
+% \RUNAUTHOR{Jones, Miller, and Wilson}
+% \RUNAUTHOR{Jones et al.} % for four or more authors
+% Enter authors following the given pattern:
+\RUNAUTHOR{Authors}
+
+% Title or shortened title suitable for running heads. Sample:
+% \RUNTITLE{Bundling Information Goods of Decreasing Value}
+% Enter the (shortened) title:
+\RUNTITLE{Short titile}
+
+% Full title. Sample:
+% \TITLE{Bundling Information Goods of Decreasing Value}
+% Enter the full title:
+\TITLE{Title}
+
+% Block of authors and their affiliations starts here:
+% NOTE: Authors with same affiliation, if the order of authors allows, 
+%   should be entered in ONE field, separated by a comma. 
+%   \EMAIL field can be repeated if more than one author
+\ARTICLEAUTHORS{%
+\AUTHOR{A1, A1\thanks{Corresponding author. \hfill \it \today}}
+\AFF{College of ***, *** University, ** city zipcode, China, \{\EMAIL{a@a.com, b@b.com}\}}
+% Enter all authors
+} % end of the block
+
+\ABSTRACT{%
+% Text of your abstract % Enter your abstract
+Abstract here.
+}%
+
+% Sample
+%\KEYWORDS{deterministic inventory theory; infinite linear programming duality; 
+%  existence of optimal policies; semi-Markov decision process; cyclic schedule}
+
+% Fill in data. If unknown, outcomment the field
+\KEYWORDS{keywords here}
+% \HISTORY{}
+
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Samples of sectioning (and labeling) in MSOM
+% NOTE: (1) \section and \subsection do NOT end with a period
+%       (2) \subsubsection and lower need end punctuation
+%       (3) capitalization is as shown (title style).
+%
+%\section{Introduction.}\label{intro} %%1.
+%\subsection{Duality and the Classical EOQ Problem.}\label{class-EOQ} %% 1.1.
+%\subsection{Outline.}\label{outline1} %% 1.2.
+%\subsubsection{Cyclic Schedules for the General Deterministic SMDP.}
+%  \label{cyclic-schedules} %% 1.2.1
+%\section{Problem Description.}\label{problemdescription} %% 2.
+
+% Text of your paper here
+
+
+
+
+
+\section{Introduction} \label{SEC: Introduction}
+
+
+The old (2014) INFORMS Template.
+
+\cite{acimovicModelsMetricsAssess2016}
+
+
+
+ 
+% \theendnotes
+
+% Acknowledgments here
+\ACKNOWLEDGMENT{%
+This work was supported by ***
+}% Leave this (end of acknowledgment)
+
+
+% Appendix here
+% Options are (1) APPENDIX (with or without general title) or 
+%             (2) APPENDICES (if it has more than one unrelated sections)
+% Outcomment the appropriate case if necessary
+
+% \begin{APPENDIX}{<Title of the Appendix>}
+% \end{APPENDIX}
+%   or
+% \begin{APPENDICES}
+% % \section{<Title of Section A>}
+% % \section{<Title of Section B>}
+% % etc
+% \end{APPENDICES}
+
+
+% References here (outcomment the appropriate case) 
+
+% CASE 1: BiBTeX used to constantly update the references 
+%   (while the paper is being written).
+%\bibliographystyle{informs2014} % outcomment this and next line in Case 1
+%\bibliography{<your bib file(s)>} % if more than one, comma separated
+
+% CASE 2: BiBTeX used to generate mypaper.bbl (to be further fine tuned)
+%\input{mypaper.bbl} % outcomment this line in Case 2
+
+
+\bibliography{bibfile}
+
+% \newpage
+
+% \appendix
+%%%%%%%%%% Merge with supplemental materials %%%%%%%%%%
+% \widetext
+\clearpage
+\begin{center}
+\textbf{Supplemental Material}
+\end{center}
+%%%%%%%%%% Merge with supplemental materials %%%%%%%%%%
+%%%%%%%%%% Prefix a "S" to all equations, figures, tables and reset the counter %%%%%%%%%%
+\setcounter{section}{0}
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{page}{1}
+\makeatletter
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\bibnumfmt}[1]{[S#1]}
+\renewcommand{\citenumfont}[1]{S#1}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thesubsection}{S.\arabic{subsection}}
+%%%%%%%%%% Prefix a "S" to all equations, figures, tables and reset the counter %%%%%%%%%%
+
+
+\subsection{S1} \label{SEC: S1}
+
+ 
+
+
+
+\end{document}
+
+
