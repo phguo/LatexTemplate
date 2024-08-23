@@ -12,3 +12,4 @@ This project provides enhanced Latex template for extensive journals.
   - Remove INFORMS disclaimer at the top of title page.
   - Remove jounal name and manuscript number at the top of each page.
   - Remove ISSN for `article` in bibliography by editing `informs2014.bst`.
+  - `ormsv080.bst` can be used as an alternative to `informs2014.bst`.
