@@ -1,0 +1,58 @@
+\documentclass[
+  lang=cn,
+  degree=doctor,
+  % zhuanshuo,
+  % blindtrail,
+  fontset=mac,
+  openany,twoside,
+  % openright,blankleft,twoside
+  % draft
+]{nuaathesis}
+
+
+\defaultfontfeatures{}
+
+\graphicspath{{./fig/},{./logo/},{../logo/}}
+
+\input{global.tex}
+% \includeonly{content/start,}
+
+\begin{document}
+
+\makecover 
+\makedeclare
+\frontmatter
+\makeabstract
+% 如果需要调整目录层级数量的话，取消下一行注释，数字含义: 0=chapter, 1=section, 2=subsection
+\setcounter{tocdepth}{2}
+\expandafter\nuaatableofcontents
+\expandafter\nuaalistoffigurestables
+% \include{content/abbr}
+
+\mainmatter 
+
+% TODO: CREATE CONTENTS
+% \include{content/introduction}
+% \include{content/part0}
+% \include{content/part1}
+% \include{content/part2}
+% \include{content/part3}
+% \include{content/conclusion}
+
+% \appendix
+% 如果需要附录的话，在这里 include
+% \include{content/ex_postscript}
+
+\backmatter
+% 如果参考文献使用 biber
+% \bibliographystyle{nuaabib}   % 参考文献的样式
+\bibliographystyle{gbt7714-numerical}   % https://github.com/nuaatug/nuaathesis/issues/1 https://github.com/zepinglee/gbt7714-bibtex-style/blob/master/gbt7714-numerical.bst, #0 'uppercase.name :=, #0 'show.doi :=
+\bibliography{phd_thesis.bib}   % 参考文献，即 bib/sample.bib 文件（纯文本）
+% 如果打算手写参考文献
+% \include{content/manref}
+
+% TODO: CREATE CONTENTS
+% \include{content/acknowledge}
+% \include{content/backmatter}
+
+\end{document}

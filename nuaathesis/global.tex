@@ -1,0 +1,202 @@
+\iffalse
+  % 本块代码被上方的 iffalse 注释掉，如需使用，请改为 iftrue
+  % 使用 Noto 字体替换中文宋体、黑体
+  \setCJKfamilyfont{\CJKrmdefault}[BoldFont=Noto Serif CJK SC Bold]{Noto Serif CJK SC}
+  \renewcommand\songti{\CJKfamily{\CJKrmdefault}}
+  \setCJKfamilyfont{\CJKsfdefault}[BoldFont=Noto Sans CJK SC Bold]{Noto Sans CJK SC Medium}
+  \renewcommand\heiti{\CJKfamily{\CJKsfdefault}}
+\fi
+
+\iffalse
+  % 本块代码被上方的 iffalse 注释掉，如需使用，请改为 iftrue
+  % 在 XeLaTeX + ctexbook 环境下使用 Noto 日文字体
+  \setCJKfamilyfont{mc}[BoldFont=Noto Serif CJK JP Bold]{Noto Serif CJK JP}
+  \newcommand\mcfamily{\CJKfamily{mc}}
+  \setCJKfamilyfont{gt}[BoldFont=Noto Sans CJK JP Bold]{Noto Sans CJK JP}
+  \newcommand\gtfamily{\CJKfamily{gt}}
+\fi
+
+
+% 设置基本文档信息，\linebreak 前面不要有空格，否则在无需换行的场合，中文之间的空格无法消除
+\nuaaset{
+  thesisid = {},   % 论文编号
+  title = {},
+  author = {},
+  college = {经济与管理学院},
+  advisers = {*** \ 教授},
+  % applydate = {二〇一八年六月}  % 默认当前日期
+  %
+  % 本科
+  % major = {\LaTeX{} 科学与技术},
+  % studentid = {131810299},
+  % classid = {应用技术},           % 班级的名称
+  % industrialadvisers = {Jack Ma}, % 企业导师，若无请删除或注释本行
+  % 硕/博士
+  majorsubject = {管理科学与工程},
+  researchfield = {},
+  libraryclassid = {},       % 中图分类号
+  subjectclassid = {},      % 学科分类号
+}
+\nuaasetEn{
+  title = {},
+  author = {},
+  college = {College of Economics and Management},
+  majorsubject = {Management Science and Engineering},
+  advisers = {Prof. \ ***},
+  degreefull = {Doctor of Philosophy},
+  % applydate = {June, 8012}
+}
+
+% 摘要
+\begin{abstract}
+中文摘要
+
+\vspace*{-2em}
+\end{abstract}
+\keywords{关键词}
+
+\begin{abstractEn}
+Abstract
+
+\vspace*{-2em}
+\end{abstractEn}
+\keywordsEn{keywords}
+
+
+% 请按自己的论文排版需求，随意修改以下全局设置
+
+% \usepackage{subfig}
+\usepackage{subfigure}
+% \usepackage{longtable}
+\usepackage{tabularx, xltabular}
+
+% above is added by guoph
+
+\usepackage{rotating}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\pgfplotsset{
+  table/search path={./fig/},
+}
+\usepackage{ifthen}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{pifont}
+
+\lstdefinestyle{lstStyleBase}{%
+  basicstyle=\small\ttfamily,
+  aboveskip=\medskipamount,
+  belowskip=\medskipamount,
+  lineskip=0pt,
+  boxpos=c,
+  showlines=false,
+  extendedchars=true,
+  upquote=true,
+  tabsize=2,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\footnotesize,
+  linewidth=\linewidth,
+  xleftmargin=\parindent,
+  xrightmargin=0pt,
+  resetmargins=false,
+  breaklines=true,
+  breakatwhitespace=false,
+  breakindent=0pt,
+  breakautoindent=true,
+  columns=flexible,
+  keepspaces=true,
+  framesep=3pt,
+  rulesep=2pt,
+  framerule=1pt,
+  backgroundcolor=\color{gray!5},
+  stringstyle=\color{green!40!black!100},
+  keywordstyle=\bfseries\color{blue!50!black},
+  commentstyle=\slshape\color{black!60}}
+
+%\usetikzlibrary{external}
+%\tikzexternalize % activate!
+
+\newcommand\cs[1]{\texttt{\textbackslash#1}}
+\newcommand\pkg[1]{\texttt{#1}\textsuperscript{PKG}}
+\newcommand\env[1]{\texttt{#1}}
+
+\theoremstyle{nuaaplain}
+\nuaatheoremchapu{definition}{定义}
+\nuaatheoremchapu{assumption}{假设}
+\nuaatheoremchap{exercise}{练习}
+% \nuaatheoremchap{nonsense}{胡诌}
+\nuaatheoremg[句]{lines}{句子}
+
+% <<<<< Added by guoph start <<<<< %
+
+\usepackage{amsmath,graphicx,bm,amsfonts,mathrsfs}
+\usepackage[short]{optidef}
+\usepackage{amsthm}
+\newtheorem{theorem}{定理}
+\newtheorem{property}{Property}
+\newtheorem{example}{Example}
+% % \newtheorem{proof}{Proof}[section]
+% \newenvironment{proof}{{\indent \indent \it Proof:\quad}}{\hfill $\blacksquare$\par}
+\newcommand*{\logeq}{\ratio\Leftrightarrow}
+ 
+% % appendix
+% % \usepackage[title]{appendix}
+% % \def\appendixname{Appendix}
+
+% Table
+\usepackage{booktabs} 
+\usepackage[flushleft]{threeparttable} 
+\usepackage{tabularx, xltabular, multirow}
+% display break for "align" environment
+\allowdisplaybreaks[1]
+
+% Algorithm
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{setspace}
+% \AtBeginEnvironment{algorithm}{\setstretch{1.2}}
+% algorithm highlight
+% \newcommand\mycommfont[1]{\ttfamily\textcolor{NavyBlue}{#1}}
+\SetCommentSty{mycommfont}
+
+% % \usepackage{subfigure} 
+
+\usepackage{makecell}
+
+% % TikZ
+% \usepackage{pgfplots}
+% \usepackage{tikz}
+% \usetikzlibrary{decorations.pathreplacing}
+% \usetikzlibrary{fit}  % fitting shapes to coordinates
+% \usetikzlibrary{backgrounds}  % drawing the background after the foreground
+
+% \usepgfplotslibrary{fillbetween}
+% \definecolor{RoyalAzure}{rgb}{0.0, 0.22, 0.66}
+% \pgfplotsset{compat=1.16}
+
+\usepackage{diagbox}
+\usepackage{dcolumn}
+\usepackage{lscape}
+\usepackage{verbatim}
+
+% \usepackage{endnotes}
+% \let\footnote=\endnote
+
+% move blank on each page to the bottom
+\raggedbottom
+
+% 中文算法环境
+\renewcommand{\algorithmcfname}{算法}
+\renewcommand{\KwData}{{输入:}}
+\renewcommand{\KwResult}{{\\输出:}}
+
+% highlight
+\definecolor{internationalorange}{rgb}{1.0, 0.31, 0.0}
+\newcommand\hlt[1]{{\color{black}#1}}
+
+% % >>>>> Added by guoph end >>>>> %
